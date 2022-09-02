@@ -40,6 +40,6 @@ jobs:
         working-directory: ./ghostdeploy
 
       - name: Apply
-        run: terraform apply -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ secrets.MYSQL_PASSWORD }}"
+        run: terraform apply -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ secrets.MYSQL_PASSWORD }}" -auto-approve
         working-directory: ./ghostdeploy
 
