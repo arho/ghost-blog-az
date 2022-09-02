@@ -1,11 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Terraform Dev Pipeline
+name: Terraform Production Pipeline
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  pull_request:
+  push:
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   terraform-test:
-    name: 'Terraform Dev'
+    name: 'Terraform Prod'
     runs-on: ubuntu-latest
     env:
       ARM_CLIENT_ID: ${{ secrets.AZ_CL_ID }}
@@ -38,12 +38,12 @@ jobs:
       - name: Init Terraform
         run: terraform init
         working-directory: ./ghostdeploy
-
-      - name: Format
-        run: terraform fmt
-        working-directory: ./ghostdeploy
       
       - name: Plan
         run: terraform plan
+        working-directory: ./ghostdeploy
+
+      - name: Apply
+        run: terraform apply
         working-directory: ./ghostdeploy
 

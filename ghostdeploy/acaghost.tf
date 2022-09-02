@@ -73,7 +73,7 @@ resource "azapi_resource" "aca-ghost" {
             },
             {
               name = "database__connection__host"
-              value = azurerm_mysql_server.ghost-mysql.fqdn
+              value = azurerm_mysql_flexible_server.ghost-mysql.fqdn
             },
             {
               name = "database__connection__user"
@@ -85,7 +85,7 @@ resource "azapi_resource" "aca-ghost" {
             },
             {
               name = "database__connection__database"
-              value = azurerm_mysql_database.ghost-db.name
+              value = azurerm_mysql_flexible_database.ghost-db.name
             },
             {
               name = "url"
@@ -114,6 +114,6 @@ resource "azapi_resource" "aca-ghost" {
     }
   })
   depends_on = [
-    azurerm_mysql_database.ghost-db
+    azurerm_mysql_flexible_database.ghost-db
   ]
 }
