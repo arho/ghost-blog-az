@@ -1,0 +1,4 @@
+## Notes for CTO:
+ACA offers a fully managed Kubernetes environment in comparison with AKS which abstracts only the control plane and management of the plugins.  It would however be more flexible to use that and employ a lot of the options that would be given to us when using AKS. The simplification that ACA brings would mean that the workflows have to be designed to more fit its features, capabilities and limitations. Overall, it seems to be a good choice for a limited subset of use cases that match with what Kubernetes is used for.
+
+Another benefit to it is that someone without the knowledge of Kubernetes can set up something that would actually be fairly resilient and production ready. It should however be noted that knowing and understanding how ACA is able to do what it does, can configure some of the small details that have been exposed by Microsoft for tweaking.
