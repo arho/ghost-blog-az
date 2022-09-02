@@ -36,10 +36,10 @@ jobs:
         working-directory: ./ghostdeploy
       
       - name: Plan
-        run: terraform plan -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ MYSQL_PASSWORD }}"
+        run: terraform plan -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ secrets.MYSQL_PASSWORD }}"
         working-directory: ./ghostdeploy
 
       - name: Apply
-        run: terraform apply -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ MYSQL_PASSWORD }}"
+        run: terraform apply -var="mysql-login=${{ secrets.MYSQL_USER }}" -var="mysql-password=${{ secrets.MYSQL_PASSWORD }}"
         working-directory: ./ghostdeploy
 
